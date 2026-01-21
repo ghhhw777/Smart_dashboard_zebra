@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Breaker & Smart Zebra Crossing</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0f19;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #0a3cff, #00ffd5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 3.5rem;
+    text-shadow: 0 0 20px #fff;
+}
+.hero p { font-size: 1.2rem; }
+
+/* SECTIONS */
+section {
+    padding: 80px 10%;
+}
+h2 {
+    color: #00ffd5;
+    font-size: 2.5rem;
+}
+
+/* CAR ANIMATION */
+.road {
+    background: #222;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.car {
+    position: absolute;
+    left: -100px;
+    top: 40px;
+    font-size: 40px;
+    animation: drive 6s linear infinite;
+}
+@keyframes drive {
+    from { left: -100px; }
+    to { left: 110%; }
+}
+
+/* MAP */
+iframe {
+    width: 100%;
+    height: 350px;
+    border-radius: 15px;
+    border: none;
+}
+
+/* ALERT */
+.alert {
+    display: none;
+    background: red;
+    padding: 20px;
+    border-radius: 10px;
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0.3;}
+    100% {opacity: 1;}
+}
+
+/* MOBILE UI */
+.phone {
+    width: 280px;
+    height: 520px;
+    border: 8px solid #00ffd5;
+    border-radius: 30px;
+    padding: 15px;
+    background: #000;
+}
+.app {
+    background: #111;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    background: #00ffd5;
+    border-radius: 25px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>🚦 Smart Breaker<br>Smart Zebra Crossing</h1>
+        <p>AI-Powered Intelligent Road Safety System</p>
+    </div>
+</div>
+
+<!-- VEHICLE SIMULATION -->
+<section>
+<h2>🚗 Live Vehicle Simulation</h2>
+<div class="road">
+    <div class="car">🚗</div>
+</div>
+<p>Vehicle slows automatically when pedestrian is detected.</p>
+</section>
+
+<!-- GOOGLE MAPS -->
+<section>
+<h2>🗺️ Smart Location & Traffic View</h2>
+<iframe 
+src="https://www.google.com/maps?q=zebra+crossing&output=embed">
+</iframe>
+<p>Shows real-world crossing locations and traffic zones.</p>
+</section>
+
+<!-- AI PEDESTRIAN -->
+<section>
+<h2>🤖 AI Pedestrian Detection</h2>
+<p>
+The system uses <b>AI-based computer vision</b> with cameras and sensors.
+</p>
+<ul>
+<li>📷 Camera captures live road footage</li>
+<li>🧠 AI model detects human shapes</li>
+<li>🚶 Confirms pedestrian intent</li>
+<li>🚨 Sends signal to smart breaker & alerts vehicles</li>
+</ul>
+</section>
+
+<!-- VIDEO DEMO -->
+<section>
+<h2>🎥 Project Demo Video</h2>
+<video width="100%" controls>
+<source src="demo.mp4" type="video/mp4">
+</video>
+<p>Add your project demo video here.</p>
+</section>
+
+<!-- MOBILE APP -->
+<section>
+<h2>📱 Smart Zebra Crossing Mobile App</h2>
+<div class="phone">
+    <div class="app">
+        <h3>Smart Crossing</h3>
+        <p>Status: 🚶 Pedestrian Detected</p>
+        <p>Traffic: 🚗 Slow</p>
+        <button>Send Alert</button>
+    </div>
+</div>
+</section>
+
+<!-- ALERT DEMO -->
+<section>
+<h2>🚨 Live Alert Demo</h2>
+<button onclick="document.getElementById('alert').style.display='block'">
+Activate Alert
+</button>
+<div class="alert" id="alert">
+⚠️ PEDESTRIAN DETECTED!<br>🚗 VEHICLE PLEASE SLOW DOWN
+</div>
+</section>
+
+<footer style="text-align:center;padding:20px;background:black;">
+Mini Project | Smart Breaker with Smart Zebra Crossing<br>
+Electronics & Communication Engineering
+</footer>
+
+</body>
+</html>
